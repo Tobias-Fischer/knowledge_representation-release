@@ -1,18 +1,14 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.1)
 project(knowledge_representation)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 find_package(catkin REQUIRED COMPONENTS
         roslint
         )
 find_package(Boost REQUIRED COMPONENTS python)
 
-if($ENV{ROS_DISTRO} STREQUAL "kinetic" OR $ENV{ROS_DISTRO} STREQUAL "melodic")
-find_package(PythonLibs 2.7 REQUIRED)
-else()
-    find_package(PythonLibs 3.8 REQUIRED)
-endif()
+find_package(PythonLibs REQUIRED)
 
 find_package(PostgreSQL)
 
